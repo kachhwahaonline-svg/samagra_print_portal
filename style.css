@@ -1,0 +1,523 @@
+body{
+
+margin:0;
+font-family:Arial;
+
+background-color:#eef3fb;
+
+background-image:
+url("images/ashok-chakra.png"),
+url("images/mp-logo.png");
+
+background-repeat:no-repeat,no-repeat;
+
+background-position:
+left 40px bottom 40px,
+right 40px bottom 40px;
+
+background-size:
+140px,
+140px;
+
+}
+
+/* dashboard menu */
+
+.menu{
+
+background:#084298;
+padding:10px;
+text-align:center;
+
+}
+
+.menu button{
+
+margin:5px;
+padding:10px 20px;
+border:none;
+background:white;
+color:#084298;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+
+}
+
+
+/* dashboard section */
+
+.dashboard{
+
+padding:30px;
+margin:20px;
+
+background:rgb(149, 234, 138);
+
+border-radius:8px;
+
+box-shadow:0 2px 10px rgba(0,0,0,0.15);
+
+}
+
+
+/* cards */
+
+.cards{
+
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+
+}
+
+
+.card{
+
+width:220px;
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+.card button{
+
+margin-top:10px;
+padding:8px 15px;
+background:#0b5ed7;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+
+}
+
+
+/* user name */
+
+.user{
+
+margin-left:auto;
+padding-right:20px;
+font-weight:bold;
+
+}
+
+.header{
+
+display:flex;
+align-items:center;
+background:#0b5ed7;
+color:white;
+padding:15px;
+
+}
+
+
+.logo{
+
+width:60px;
+height:60px;
+
+background:white;
+color:#1f5fbf;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-weight:bold;
+font-size:26px;
+
+margin-right:15px;
+
+}
+
+.logo span{
+
+display:block;
+text-align:center;
+
+}
+
+
+.title h1{
+
+margin:0;
+font-size:26px;
+
+}
+
+
+.title p{
+
+margin:0;
+font-size:14px;
+
+}
+
+
+.login-container{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:85vh;
+
+background:
+
+radial-gradient(circle at top right,#dce9ff,transparent),
+radial-gradient(circle at bottom left,#eaf3ff,transparent);
+
+}
+
+
+.login-box{
+
+width:350px;
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+text-align:center;
+
+}
+
+
+.login-box h2{
+
+margin-bottom:20px;
+
+}
+
+
+.login-box input{
+
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+
+}
+
+
+.login-box button{
+
+width:100%;
+padding:12px;
+background:#0b5ed7;
+color:white;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+
+}
+
+
+.login-box button:hover{
+
+background:#084298;
+
+}
+
+
+.footer{
+
+font-size:12px;
+color:gray;
+margin-top:15px;
+
+}
+
+.stats{
+display:flex;
+gap:20px;
+margin-top:20px;
+}
+
+.stat-box{
+
+background:white;
+padding:20px;
+width:200px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.15);
+text-align:center;
+transition:0.3s;
+
+}
+
+.stat-box:hover{
+
+transform:scale(1.05);
+
+}
+
+.logout-btn{
+
+margin-top:5px;
+padding:5px 12px;
+background:red;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+
+}
+
+.news-bar{
+
+display:flex;
+align-items:center;
+background:#fff;
+border:1px solid #ccc;
+margin:10px;
+height:40px;
+
+}
+
+.news-title{
+
+background:#d9534f;
+color:white;
+padding:10px 20px;
+font-weight:bold;
+
+animation:newsZoom 1.5s infinite alternate;
+
+}
+
+.news-slide{
+
+flex:1;
+padding-left:10px;
+font-weight:bold;
+color:#f8b600;
+
+}
+
+.datetime{
+
+font-size:14px;
+font-weight:bold;
+margin-top:5px;
+color:#f9f9f9;
+
+}
+
+.count{
+
+position:absolute;
+top:-5px;
+right:-10px;
+background:red;
+color:white;
+font-size:12px;
+padding:2px 6px;
+border-radius:50%;
+
+}
+
+.notibox{
+
+display:none;
+position:absolute;
+top:30px;
+right:0;
+width:220px;
+background:white;
+border-radius:6px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+padding:10px;
+
+}
+
+.notibox p{
+
+font-size:13px;
+margin:6px 0;
+border-bottom:1px solid #eee;
+padding-bottom:5px;
+
+}
+
+.dashboard-title{
+
+background:linear-gradient(90deg,#0b5ed7,#3c8dff);
+color:white;
+padding:15px;
+border-radius:8px;
+margin-bottom:20px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+
+}
+
+.dashboard-title h2{
+
+margin:0;
+font-size:26px;
+letter-spacing:2px;
+
+}
+
+.dashboard-title p{
+
+margin:5px 0 0 0;
+font-size:13px;
+
+}
+
+.dashboard-title h2{
+
+margin:0;
+font-size:26px;
+letter-spacing:2px;
+
+}
+
+.dashboard-title p{
+
+margin:5px 0 0 0;
+font-size:13px;
+
+}
+
+.news-title{
+
+background:#fb0800;
+color:white;
+padding:10px 20px;
+font-weight:bold;
+
+animation:blinkNews 1.5s infinite;
+
+}
+
+@keyframes newsZoom{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.15);
+}
+
+}
+
+.header{
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+background:#1f5fbf;
+color:white;
+
+padding:10px 20px;
+
+}
+
+.header-menu{
+
+margin-left:auto;
+display:flex;
+gap:20px;
+padding-right:20px;
+
+}
+
+.header-menu a{
+
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:14px;
+
+}
+
+.header-menu a:hover{
+
+text-decoration:underline;
+
+}
+
+.admin-btn{
+
+background:#dc3545;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:4px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+.admin-btn:hover{
+
+background:#b02a37;
+
+}
+
+.admin-user{
+
+margin-left:auto;
+padding-right:20px;
+
+}
+
+.logo{
+
+width:60px;
+height:60px;
+background:white;
+color:#0b5ed7;
+font-weight:bold;
+font-size:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+margin-right:15px;
+
+}
+
+.title{
+
+margin-left:10px;
+
+}
+
+.title h1{
+
+margin:0;
+font-size:26px;
+
+}
+
+.title p{
+
+margin:0;
+font-size:14px;
+
+}
