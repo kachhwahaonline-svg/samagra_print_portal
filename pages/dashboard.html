@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Samagra Print Portal - Dashboard</title>
+
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+<div class="header">
+
+<div class="logo">MP</div>
+
+<div class="title">
+<h1>Samagra Print Portal</h1>
+<p>Government of Madhya Pradesh</p>
+</div>
+
+<div class="user">
+
+    <div class="datetime">
+<span id="date"></span> | <span id="time"></span>
+</div>
+
+<div class="user">
+<div>
+ID: <span id="opid"></span><br>
+Name: <span id="opname"></span>
+</div>
+
+<button class="logout-btn" onclick="logout()">Logout</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="news-bar">
+
+<div class="news-title">
+Latest News
+</div>
+
+<div class="news-slide">
+
+<marquee direction="left" scrollamount="5">
+
+1.एक समग्र आईडी होते हुए नवीन समग्र आईडी बनवाना नियम विरुध हैं |  
+2.नवीन समग्र आईडी बनाने से पहले ये जांच लें कि आपका समग्र पहले से बना हुआ तो नहीं हैं |  
+3.नवीन समग्र बनाने के लिए आधार अनिवार्य हैं |  
+4.समग्र में आधार ई-केवाईसी करने के 2 विकल्प उपलब्ध हैं |  
+१. आधार में दर्ज मोबाइल पर OTP के माध्यम से  
+२. बायोमैट्रिक के माध्यम से  
+
+</marquee>
+
+</div>
+
+</div>
+
+
+<div class="dashboard">
+
+<h2>Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Samagra ID Search</h3>
+<p>Search by Samagra ID</p>
+<button onclick="window.open('https://samagra.gov.in/Public/Dashboard/Search_Family_Member.aspx?s=s/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Family ID Search</h3>
+<p>Search Family Samagra ID</p>
+<button onclick="window.open('https://samagra.gov.in/Public/Dashboard/Search_Family_Member.aspx?s=s/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Member Search</h3>
+<p>Search Member Details</p>
+<button onclick="window.open('https://samagra.gov.in/Public/Dashboard/Search_Family_Member.aspx?s=s/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Samagra Card Print</h3>
+<p>Print Samagra Card</p>
+<button onclick="window.open('https://samagra.gov.in/Citizen/RFC/RequestLogin.aspx/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Family Member List</h3>
+<p>View Family Members</p>
+<button onclick="window.open('/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Add Member</h3>
+<p>Add New Member</p>
+<button onclick="window.open('https://samagra.gov.in/Citizen/Pages/RegisterRequestOfNewMembersInExistingFamily_New.aspx/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Update Member</h3>
+<p>Edit Member Details</p>
+<button onclick="window.open('https://samagra.gov.in/Citizen/RFC/RequestLogin.aspx/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>eKYC Status</h3>
+<p>Check eKYC Status</p>
+<button onclick="window.open('https://samagra.gov.in/Home/NPCIStatus.aspx/', '_blank')">Open</button>
+</div>
+
+<div class="card">
+<h3>Samagra ID Download</h3>
+<p>Download Samagra Card</p>
+<button>Open</button>
+</div>
+
+<div class="card">
+<h3>Profile View</h3>
+<p>View Samagra Profile</p>
+<button>Open</button>
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<h3>Total Login</h3>
+<p id="totallogin">0</p>
+</div>
+
+<div class="stat-box">
+<h3>Total Services</h3>
+<p id="totalservices">10</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function openPage(page)
+{
+window.location=page;
+}
+
+function logout()
+{
+window.location="../index.html";
+}
+
+</script>
+
+<script>
+
+let name = localStorage.getItem("operatorName");
+let id = localStorage.getItem("operatorID");
+
+document.getElementById("opname").innerText = name;
+document.getElementById("opid").innerText = id;
+
+let logins = localStorage.getItem("totalLogin");
+
+document.getElementById("totallogin").innerText = logins;
+
+function openPage(page)
+{
+window.location=page;
+}
+
+function logout()
+{
+localStorage.clear();
+window.location="../index.html";
+}
+
+function updateDateTime(){
+
+let now = new Date();
+
+let date = now.toLocaleDateString();
+
+let time = now.toLocaleTimeString();
+
+document.getElementById("date").innerText = date;
+
+document.getElementById("time").innerText = time;
+
+}
+
+setInterval(updateDateTime,1000);
+
+updateDateTime();
+
+</script>
+
+<script>
+
+function animateValue(id,start,end,duration){
+
+let obj = document.getElementById(id);
+
+let range = end - start;
+
+let current = start;
+
+let increment = end > start ? 1 : -1;
+
+let stepTime = Math.abs(Math.floor(duration / range));
+
+let timer = setInterval(function(){
+
+current += increment;
+
+obj.innerText = current;
+
+if(current == end){
+
+clearInterval(timer);
+
+}
+
+},stepTime);
+
+}
+
+let logins = localStorage.getItem("totalLogin") || 0;
+
+animateValue("totallogin",0,logins,1000);
+
+animateValue("totalservices",0,10,1000);
+
+function toggleNotification(){
+
+let box = document.getElementById("notibox");
+
+if(box.style.display=="block")
+
+box.style.display="none";
+
+else
+
+box.style.display="block";
+
+}
+
+</script>
